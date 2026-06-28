@@ -12,6 +12,12 @@ javac -d out src/wildfire/*.java
 java -cp out wildfire.Main
 ```
 
+OR
+
+cd "C:\Users\Admin\Documents\WILDFIRE_MULTITHREADED"
+javac -d out (Get-ChildItem src/wildfire/*.java | % { $_.FullName })
+java "-Dfile.encoding=UTF-8" -cp out wildfire.Main
+
 ## Configuration (`instructions.txt`)
 
 One line with space-separated values:
