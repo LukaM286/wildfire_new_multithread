@@ -8,11 +8,10 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * Wildfire Simulation - Multithreaded Version
+ * 
  *
  * Razlika od sekvenčne verzije:
- *   - Grid razdelimo na PASOVE (en pas na thread)
- *   - Vsak thread dela svojo fazo neodvisno
+ *   - Grid razdeli na pasove (en pas na thread)
  *   - CyclicBarrier poskrbi da vsi threadi končajo fazo 1
  *     preden katerikoli začne fazo 2
  */
@@ -40,7 +39,7 @@ public class WildfireSimulation {
         this.shouldIgnite = new boolean[config.N][config.M];
         this.tick       = 0;
 
-        // Uporabimo toliko threadov kot ima računalnik jeder
+        // Uporabi toliko threadov kot ima računalnik jeder
         this.numThreads = Runtime.getRuntime().availableProcessors();
         System.out.println("Threads: " + numThreads);
 
