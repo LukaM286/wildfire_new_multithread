@@ -10,7 +10,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * 
  *
- * 
+ *   
  *   - Grid razdeli na pasove (en pas na thread)
  *   - CyclicBarrier poskrbi da vsi threadi končajo fazo 1
  *     preden katerikoli začne fazo 2
@@ -48,7 +48,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // generateForest() in igniteRandomTiles() sta enaka kot v sekvenčni
+    // generateForest() in igniteRandomTiles() sta enaka kot v sekvenčni, preveri če dela
     // 
 
     public void generateForest() {
