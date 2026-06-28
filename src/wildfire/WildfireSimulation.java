@@ -133,7 +133,7 @@ public class WildfireSimulation {
     }
 
     /**
-     * Vsak delavski thread teče v tej zanki dokler ga ne prekinemo.
+     * Vsak delavski thread teče v tej zanki dokler ga ne prekine.
      *
      * @param threadId  kateri thread je ta (0, 1, 2, ...)
      * @param barrier   skupni barrier za sinhronizacijo
@@ -195,7 +195,7 @@ public class WildfireSimulation {
                     }
                 }
 
-                // Počakaj da VSI threadi končajo fazo 2 preden začnemo naslednji tick
+                // Počakaj da VSI threadi končajo fazo 2 preden začne naslednji tick
                 barrier.await();
 
             } catch (InterruptedException e) {
