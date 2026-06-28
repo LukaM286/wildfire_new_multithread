@@ -10,7 +10,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * 
  *
- * Razlika od sekvenčne verzije:
+ * 
  *   - Grid razdeli na pasove (en pas na thread)
  *   - CyclicBarrier poskrbi da vsi threadi končajo fazo 1
  *     preden katerikoli začne fazo 2
@@ -202,7 +202,7 @@ public class WildfireSimulation {
                 Thread.currentThread().interrupt();
                 break;
             } catch (BrokenBarrierException e) {
-                break; // glavni thread je prekinil simulacijo
+                break; // glavni thread prekine simulacijo
             }
         }
     }
