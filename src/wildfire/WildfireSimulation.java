@@ -28,7 +28,6 @@ public class WildfireSimulation {
     // (shared med threadi, ampak vsak thread piše samo v svoj pas)
     private boolean[][] shouldIgnite;
 
-    // Število threadov = število procesorjev na računalniku
     private final int numThreads;
 
     public WildfireSimulation(SimConfig config) {
