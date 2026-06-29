@@ -9,7 +9,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /** 
  * Grid razdeli na pasove (en pas na thread)
- * CyclicBarrier poskrbi da vsi threadi končajo fazo 1
+ * CyclicBarrier, da vsi threadi končajo fazo 1
  *     preden katerikoli začne fazo 2
  */
 public class WildfireSimulation {
@@ -21,7 +21,7 @@ public class WildfireSimulation {
     private int[][]       burnTimer;
     private int           tick;
 
-    // shouldIgnite[r][c] = true če ta tile dobi ogenj v tem ticku
+    // shouldIgnite[r][c] = true če ta tile dobi ogenj v tem ticku, v tem
     private boolean[][] shouldIgnite;
 
     private final int numThreads;
@@ -34,7 +34,7 @@ public class WildfireSimulation {
         this.shouldIgnite = new boolean[config.N][config.M];
         this.tick       = 0;
 
-        // Uporabi toliko threadov kot ima računalnik jeder
+        //jeder
         this.numThreads = Runtime.getRuntime().availableProcessors();
         System.out.println("Threads: " + numThreads);
 
@@ -99,7 +99,7 @@ public class WildfireSimulation {
 
     public void run(SimVisualizer visualizer) {
 
-        // Barrier za numThreads DELAVCEV + 1 GLAVNI thread
+        // Barrier za numThreads delavcec + 1 glavni thread
         CyclicBarrier barrier = new CyclicBarrier(numThreads + 1);
 
         Thread[] threads = new Thread[numThreads];
@@ -128,7 +128,7 @@ public class WildfireSimulation {
     }
 
     /**
-     * Vsak delavski thread teče v tej zanki dokler ga ne prekine.
+     * Vsak delavski thread teče v tej zanki, dokler ni interrupt
      *
      * @param threadId  
      * @param barrier   
@@ -169,7 +169,7 @@ public class WildfireSimulation {
                     }
                 }
 
-                // Počakaj da VSI threadi končajo fazo 1
+                // čakaj da končajo fazo 1
                 barrier.await();
 
                 // FAZA 2: apliciraj spremembe za svoj pas
@@ -190,7 +190,7 @@ public class WildfireSimulation {
                     }
                 }
 
-                // Počakaj da VSI threadi končajo fazo 2 preden začne naslednji tick
+                // čakaj da končajo fazo2
                 barrier.await();
 
             } catch (InterruptedException e) {
@@ -203,7 +203,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // Pomožne metode
+    // Pomožne metode, isto kot prej
     // 
 
     private boolean hasBurningTile() {

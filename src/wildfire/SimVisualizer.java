@@ -35,7 +35,7 @@ public class SimVisualizer extends JFrame {
 
 
     public void repaintAndWait() {
-        // Ask Swing to repaint on the EDT (Event Dispatch Thread)
+        //repaint on the EDT (Event Dispatch Thread)
         SwingUtilities.invokeLater(gridPanel::repaint);
 
         try {
@@ -45,9 +45,6 @@ public class SimVisualizer extends JFrame {
         }
     }
 
-    // 
-    // actual drawing
-    // 
 
     private class GridPanel extends JPanel {
 
@@ -65,7 +62,6 @@ public class SimVisualizer extends JFrame {
             int N = sim.getConfig().N;
             int M = sim.getConfig().M;
 
-            // Draw each tile
             for (int r = 0; r < N; r++) {
                 for (int c = 0; c < M; c++) {
                     g.setColor(colorFor(grid[r][c]));
@@ -73,7 +69,6 @@ public class SimVisualizer extends JFrame {
                 }
             }
 
-            // Draw tick counter at the bottom
             g.setColor(Color.WHITE);
             g.setFont(new Font("Monospaced", Font.BOLD, 13));
             g.drawString("Tick: " + sim.getTick(), 8, N * CELL_SIZE + 20);
