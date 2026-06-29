@@ -136,7 +136,7 @@ public class WildfireSimulation {
     private void workerLoop(int threadId, CyclicBarrier barrier) {
 
         // Izračunaj kateri pas vrstic pripada temu threadu
-        // Npr. thread 0 od 4 na gridu 100 vrstic → vrstice 0-24
+        // Npr. thread 0 od 4 na gridu 100 vrstic, vrstice 0-24
         int rowsPerThread = config.N / numThreads;
         int rowStart = threadId * rowsPerThread;
         int rowEnd   = (threadId == numThreads - 1) //rowend = config.N
