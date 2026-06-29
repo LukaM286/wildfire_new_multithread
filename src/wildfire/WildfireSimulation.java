@@ -22,7 +22,6 @@ public class WildfireSimulation {
     private int           tick;
 
     // shouldIgnite[r][c] = true če ta tile dobi ogenj v tem ticku
-    // (shared med threadi, ampak vsak thread piše samo v svoj pas)
     private boolean[][] shouldIgnite;
 
     private final int numThreads;
@@ -95,7 +94,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // Glavna zanka, zdaj s threadi
+    // 
     // 
 
     public void run(SimVisualizer visualizer) {

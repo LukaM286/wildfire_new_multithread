@@ -10,10 +10,10 @@ public class SimVisualizer extends JFrame {
 
     private static final int FRAME_DELAY_MS = 30;
 
-    private static final Color COLOR_GRASS   = new Color(210, 190, 140); // sandy tan
-    private static final Color COLOR_FOREST  = new Color( 34, 100,  34); // dark green
-    private static final Color COLOR_BURNING = new Color(230,  70,  10); // fire orange
-    private static final Color COLOR_BURNED  = new Color( 60,  50,  40); // dark ash
+    private static final Color COLOR_GRASS   = new Color(210, 190, 140); 
+    private static final Color COLOR_FOREST  = new Color( 34, 100,  34); 
+    private static final Color COLOR_BURNING = new Color(230,  70,  10); 
+    private static final Color COLOR_BURNED  = new Color( 60,  50,  40); 
 
     private final WildfireSimulation sim;
     private final GridPanel gridPanel;
