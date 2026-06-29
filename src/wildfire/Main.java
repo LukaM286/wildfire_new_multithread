@@ -13,7 +13,7 @@ public class Main {
 
 
         long startTime = System.currentTimeMillis();
-        //sim.run(visualizer)
+        //sim.run(visualizer);
         sim.run(null);
         long endTime = System.currentTimeMillis();
 

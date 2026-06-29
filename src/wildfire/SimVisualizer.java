@@ -88,4 +88,4 @@ public class SimVisualizer extends JFrame {
                 default:      return Color.MAGENTA; 
         }
     }
-}
+}}
