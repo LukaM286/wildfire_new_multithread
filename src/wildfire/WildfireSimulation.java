@@ -7,12 +7,9 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-/**
- * 
- *
- *   
- *   - Grid razdeli na pasove (en pas na thread)
- *   - CyclicBarrier poskrbi da vsi threadi končajo fazo 1
+/** 
+ * Grid razdeli na pasove (en pas na thread)
+ * CyclicBarrier poskrbi da vsi threadi končajo fazo 1
  *     preden katerikoli začne fazo 2
  */
 public class WildfireSimulation {
@@ -48,7 +45,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // generateForest() in igniteRandomTiles() sta enaka kot v sekvenčni, preveri če dela
+    // generateForest() in igniteRandomTiles() sta enaka kot v sekvenčni
     // 
 
     public void generateForest() {
@@ -134,8 +131,8 @@ public class WildfireSimulation {
     /**
      * Vsak delavski thread teče v tej zanki dokler ga ne prekine.
      *
-     * @param threadId  kateri thread je ta (0, 1, 2, ...)
-     * @param barrier   skupni barrier za sinhronizacijo
+     * @param threadId  
+     * @param barrier   
      */
     private void workerLoop(int threadId, CyclicBarrier barrier) {
 
@@ -152,7 +149,7 @@ public class WildfireSimulation {
 
         while (!Thread.currentThread().isInterrupted()) { // dokler main thread ne pošlje signala
             try {
-                // --- FAZA 1: izračunaj shouldIgnite za svoj pas ---
+                // FAZA 1: izračunaj shouldIgnite za svoj pas 
                 for (int r = rowStart; r < rowEnd; r++) {
                     for (int c = 0; c < config.M; c++) {
                         if (grid[r][c] == TileState.BURNING) {
@@ -176,7 +173,7 @@ public class WildfireSimulation {
                 // Počakaj da VSI threadi končajo fazo 1
                 barrier.await();
 
-                // --- FAZA 2: apliciraj spremembe za svoj pas ---
+                // FAZA 2: apliciraj spremembe za svoj pas
                 for (int r = rowStart; r < rowEnd; r++) {
                     for (int c = 0; c < config.M; c++) {
                         if (shouldIgnite[r][c]) {
