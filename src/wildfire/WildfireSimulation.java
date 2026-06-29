@@ -143,14 +143,14 @@ public class WildfireSimulation {
         // Npr. thread 0 od 4 na gridu 100 vrstic → vrstice 0-24
         int rowsPerThread = config.N / numThreads;
         int rowStart = threadId * rowsPerThread;
-        int rowEnd   = (threadId == numThreads - 1)
+        int rowEnd   = (threadId == numThreads - 1) //rowend = config.N
                        ? config.N                    // zadnji thread vzame preostanek
                        : rowStart + rowsPerThread;
 
         // Vsak thread ima svoj Random da ni race conditiona na rng
         Random localRng = new Random(config.seed + threadId);
 
-        while (!Thread.currentThread().isInterrupted()) {
+        while (!Thread.currentThread().isInterrupted()) { // dokler main thread ne pošlje signala
             try {
                 // --- FAZA 1: izračunaj shouldIgnite za svoj pas ---
                 for (int r = rowStart; r < rowEnd; r++) {
@@ -182,7 +182,7 @@ public class WildfireSimulation {
                         if (shouldIgnite[r][c]) {
                             grid[r][c]        = TileState.BURNING;
                             burnTimer[r][c]   = 1;
-                            shouldIgnite[r][c] = false; // resetiraj za naslednji tick
+                            shouldIgnite[r][c] = false; // resetiraj za naslednji tick, ročno, skupno vsem threadom
 
                         } else if (grid[r][c] == TileState.BURNING) {
                             burnTimer[r][c]++;
