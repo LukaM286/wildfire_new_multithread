@@ -9,7 +9,7 @@ public class Main {
         sim.generateForest();
         sim.igniteRandomTiles();
 
-        //SimVisualizer visualizer = new SimVisualizer(sim);
+        //mVisualizer visualizer = new SimVisualizer(sim);
 
 
         long startTime = System.currentTimeMillis();
