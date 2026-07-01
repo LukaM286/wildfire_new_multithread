@@ -69,7 +69,7 @@ public class SimVisualizer extends JFrame {
                 }
             }
 
-            g.setColor(Color.WHITE);
+            g.setColor(Color.BLACK);
             g.setFont(new Font("Monospaced", Font.BOLD, 13));
             g.drawString("Tick: " + sim.getTick(), 8, N * CELL_SIZE + 20);
         }
