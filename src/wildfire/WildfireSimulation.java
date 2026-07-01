@@ -139,7 +139,7 @@ public class WildfireSimulation {
         // Npr. thread 0 od 4 na gridu 100 vrstic, vrstice 0-24
         int rowsPerThread = config.N / numThreads;
         int rowStart = threadId * rowsPerThread;
-        int rowEnd   = (threadId == numThreads - 1) //rowend = config.N
+        int rowEnd   = (threadId == numThreads - 1) //rowend = config.N; if ((threadId == numThreads - 1)) then 
                        ? config.N                    // zadnji thread vzame preostanek
                        : rowStart + rowsPerThread;
 
