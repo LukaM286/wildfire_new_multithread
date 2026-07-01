@@ -9,12 +9,12 @@ public class Main {
         sim.generateForest();
         sim.igniteRandomTiles();
 
-        //mVisualizer visualizer = new SimVisualizer(sim);
+        SimVisualizer visualizer = new SimVisualizer(sim);
 
 
         long startTime = System.currentTimeMillis();
-        //sim.run(visualizer);
-        sim.run(null); //sele tukaj worker threads
+        sim.run(visualizer);
+        //sim.run(null); //sele tukaj worker threads
         long endTime = System.currentTimeMillis();
 
         System.out.println("Simulation finished!");
