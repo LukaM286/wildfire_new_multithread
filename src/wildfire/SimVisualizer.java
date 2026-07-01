@@ -8,7 +8,7 @@ public class SimVisualizer extends JFrame {
 
     private static final int CELL_SIZE = 6;
 
-    private static final int FRAME_DELAY_MS = 30;
+    private static final int FRAME_DELAY_MS = 100;
 
     private static final Color COLOR_GRASS   = new Color(210, 190, 140); 
     private static final Color COLOR_FOREST  = new Color( 34, 100,  34); 
