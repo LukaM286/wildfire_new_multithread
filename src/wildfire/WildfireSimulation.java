@@ -45,7 +45,7 @@ public class WildfireSimulation {
 
     // 
     // generateForest() in igniteRandomTiles() sta enaka kot v sekvenčni
-    // 
+    // to dela en thread trenutno
 
     public void generateForest() {
         int totalTiles   = config.N * config.M;

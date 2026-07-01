@@ -14,7 +14,7 @@ public class Main {
 
         long startTime = System.currentTimeMillis();
         //sim.run(visualizer);
-        sim.run(null);
+        sim.run(null); //sele tukaj worker threads
         long endTime = System.currentTimeMillis();
 
         System.out.println("Simulation finished!");
